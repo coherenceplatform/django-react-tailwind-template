@@ -2,7 +2,7 @@ backend:
   type: backend
   url_path: /api
   repo_path: backend
-  migration: ["python", "manage.py", "migrate"]
+#  migration: ["python", "manage.py", "migrate"]
 
   dev: ["python", "manage.py", "runserver", "0.0.0.0:$PORT"]
   prod: ["uvicorn", "asgi:application", "--port=$PORT", "--host=0.0.0.0"]
