@@ -1,0 +1,26 @@
+backend:
+  type: backend
+  url_path: /api
+  repo_path: backend
+  migration: ["python", "manage.py", "migrate"]
+
+  dev: ["python", "manage.py", "runserver", "0.0.0.0:$PORT"]
+  prod: ["uvicorn", "asgi:application", "--port=$PORT", "--host=0.0.0.0"]
+
+  resources:
+  - name: db1
+    engine: postgres
+    version: 13
+    type: database
+
+frontend:
+  type: frontend
+  index_file_name: index.html
+  url_path: /
+  repo_path: frontend
+  assets_path: build
+
+  local_packages: ["node_modules"]
+  install: ["npm", "install"]
+  build: ["npm", "run", "build"]
+  dev: ["npm", "run", "dev"]

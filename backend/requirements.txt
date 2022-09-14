@@ -1,0 +1,4 @@
+Django==4.1.1
+pytz==2022.2.1
+uvicorn
+dj_database_url
