@@ -5,7 +5,7 @@ backend:
 #  migration: ["python", "manage.py", "migrate"]
 
   dev: ["python", "manage.py", "runserver", "0.0.0.0:$PORT"]
-  prod: ["uvicorn", "asgi:application", "--port=$PORT", "--host=0.0.0.0"]
+  prod: ["uvicorn", "backend.asgi:application", "--port=$PORT", "--host=0.0.0.0"]
 
   resources:
   - name: db1
