@@ -1,4 +1,4 @@
 
-# 25m starter
+# A starter
 
 - Using Django, React, Tailwind, and Coherence
